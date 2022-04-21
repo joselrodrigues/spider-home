@@ -1,6 +1,9 @@
 const puppeteer = require('puppeteer');
 
-const urls = ["https://www.bancoestado.cl/imagenes/_personas/home/default.asp?desk"];
+const urls = [
+  "https://stackoverflow.com/questions/46293216/crawling-multiple-urls-in-a-loop-using-puppeteer",
+  "https://github.com/puppeteer/puppeteer/issues/1329"
+];
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -10,8 +13,8 @@ const urls = ["https://www.bancoestado.cl/imagenes/_personas/home/default.asp?de
     const url = urls[i];
     try{
       await page.setViewport({width: 800, height: 800, deviceScaleFactor: 2});
-      await page.goto(`${url}`);
-      await page.screenshot({ path: `./screenshots/home/home${i}.png` });
+      await page.goto(`${url}`, {timeout: 60000});
+      await page.screenshot({ path: `./screenshots/home/home${i}.png`, fullPage: true });
     } catch (error){
       console.error(`this ${url} could not be scrapped, error ${error}`)
     }
