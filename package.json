@@ -1,0 +1,23 @@
+{
+  "name": "spider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "spider:home": "node ./spiders/home.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joselrodrigues/spider-home.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joselrodrigues/spider-home/issues"
+  },
+  "homepage": "https://github.com/joselrodrigues/spider-home#readme",
+  "dependencies": {
+    "puppeteer": "^13.6.0"
+  }
+}
